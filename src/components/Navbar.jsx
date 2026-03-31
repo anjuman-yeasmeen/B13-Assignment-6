@@ -1,4 +1,6 @@
 import React from 'react'
+import { ShoppingCart } from "lucide-react";
+
 
 const Navbar = () => {
   return (
@@ -68,12 +70,17 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      {/* Navbar End: Icons & Buttons  */}
+     
+     {/* Navbar End: Icons & Buttons  */}
+      <div className="navbar-end gap-2">
+        
+        <div className="indicator mr-2">
+          <span className="indicator-item badge badge-secondary badge-sm text-white">0</span>
+          <button className="btn btn-ghost btn-circle btn-sm p-0">
+            <ShoppingCart size={20} />
+          </button>
+        </div>
 
-      <div className="navbar-end">
-        <button className="btn btn-ghost btn-circle btn-sm">
-          <ShoppingCart size={20} />
-        </button>
         <a className="btn btn-link no-underline text-gray-700 hover:text-[#7C3AED] normal-case font-semibold">
           Login
         </a>
@@ -82,6 +89,7 @@ const Navbar = () => {
           Get Started
         </a>
       </div>
+
     </div>
   
       

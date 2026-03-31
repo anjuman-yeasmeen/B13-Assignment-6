@@ -1,10 +1,13 @@
 import "./App.css";
-import { ShoppingCart } from "lucide-react";
+import Navbar from "./components/Navbar"; 
+import Banner from "./components/Banner"; 
 
 function App() {
   return (
-    
-   <Navbar></Navbar>
+    <>
+      <Navbar></Navbar>
+      <Banner></Banner>
+    </>
   );
 }
 
