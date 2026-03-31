@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "AI Content Writer",
+    "description": "Generate SEO optimized blogs and marketing copy in seconds.",
+    "price": 29,
+    "period": "Monthly",
+    "tag": "Best Seller",
+    "features": ["Unlimited Words", "SEO Optimization", "Export to PDF"],
+    "icon": "https://img.icons8.com/fluency/48/edit-property.png"
+  },
+  {
+    "id": 2,
+    "name": "Higher Math Solver",
+    "description": "Step-by-step solutions for complex trigonometry and calculus.",
+    "price": 15,
+    "period": "Monthly",
+    "tag": "Popular",
+    "features": ["Graph Support", "Formula Library", "24/7 Support"],
+    "icon": "https://img.icons8.com/fluency/48/calculator.png"
+  },
+  {
+    "id": 3,
+    "name": "Design Templates",
+    "description": "2000+ premium social media and presentation templates.",
+    "price": 49,
+    "period": "One-time",
+    "tag": "New",
+    "features": ["Commercial License", "Monthly Updates", "Figma Files"],
+    "icon": "https://img.icons8.com/fluency/48/design.png"
+  },
+  {
+    "id": 4,
+    "name": "Statistical Analyzer",
+    "description": "Professional tool for data visualization and statistical distribution.",
+    "price": 99,
+    "period": "Yearly",
+    "tag": "Pro",
+    "features": ["CSV Import", "Advanced Charts", "Cloud Sync"],
+    "icon": "https://img.icons8.com/fluency/48/combo-chart.png"
+  },
+  {
+    "id": 5,
+    "name": "SEO Audit Pro",
+    "description": "Deep dive into your website's performance and ranking factors.",
+    "price": 35,
+    "period": "Monthly",
+    "tag": "Trending",
+    "features": ["Competitor Analysis", "Keyword Tracking", "Weekly Reports"],
+    "icon": "https://img.icons8.com/fluency/48/area-chart.png"
+  },
+  {
+    "id": 6,
+    "name": "Video Editor Cloud",
+    "description": "Fast and easy cloud-based video editing for social media.",
+    "price": 20,
+    "period": "Monthly",
+    "tag": "Popular",
+    "features": ["4K Export", "Free Music Library", "AI Subtitles"],
+    "icon": "https://img.icons8.com/fluency/48/video-file.png"
+  }
+]
