@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header'; 
 
-const MainContainer = () => {
+
+const MainContainer = ({ cart, handleAddToCart }) => {
   const [products, setProducts] = useState([]);
   const [activeTab, setActiveTab] = useState('products');
-//   const [cart, setCart] = useState([]);
 
-  
   useEffect(() => {
     fetch('/product.json')
       .then(res => res.json())
@@ -18,9 +17,12 @@ const MainContainer = () => {
     <div className="max-w-7xl mx-auto px-4 py-6">
       
       
-      <Header isActive={activeTab} setIsActive={setActiveTab} />
+      <Header 
+        isActive={activeTab} 
+        setIsActive={setActiveTab} 
+        cartCount={cart.length} 
+      />
 
-     
       {activeTab === 'products' ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {products.map(product => (
@@ -44,15 +46,36 @@ const MainContainer = () => {
                   </li>
                 ))}
               </ul>
-              <button className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white py-4 rounded-2xl font-bold transition-all">
+              
+              
+              <button 
+                onClick={() => handleAddToCart(product)}
+                className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white py-4 rounded-2xl font-bold transition-all"
+              >
                 Buy Now
               </button>
             </div>
           ))}
         </div>
       ) : (
-        <div className="text-center py-20 mt-12 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">
-           <p className="text-gray-400 text-xl font-medium">Your cart is empty!</p>
+        <div className="mt-12 bg-gray-50 rounded-3xl p-8 border-2 border-dashed border-gray-200">
+          {cart.length > 0 ? (
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Your Selected Items:</h2>
+              <ul className="space-y-2">
+                {cart.map((item, idx) => (
+                  <li key={idx} className="bg-white p-4 rounded-xl shadow-sm flex justify-between">
+                    <span>{item.name}</span>
+                    <span className="font-bold">${item.price}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-gray-400 text-xl font-medium">Your cart is empty!</p>
+            </div>
+          )}
         </div>
       )}
     </div>
