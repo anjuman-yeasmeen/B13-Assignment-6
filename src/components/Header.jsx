@@ -13,7 +13,7 @@ const Header = ({ isActive, setIsActive, cartCount }) => {
                 </p>
             </div>
 
-            {/* ট্যাব বাটন কন্টেইনার */}
+          
             <div className="inline-flex p-1 bg-white border border-gray-100 rounded-full shadow-sm">
                 
                 {/* Products Button */}
@@ -28,7 +28,7 @@ const Header = ({ isActive, setIsActive, cartCount }) => {
                     Products
                 </button>
 
-               
+                {/* cart Button */}
                 <button
                     onClick={() => setIsActive("cart")}
                     className={`px-10 py-2.5 rounded-full font-semibold transition-all duration-300 ${

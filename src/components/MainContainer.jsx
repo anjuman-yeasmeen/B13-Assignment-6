@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header'; 
+import { ShoppingCart, Trash2 } from "lucide-react"; 
 
-
-const MainContainer = ({ cart, handleAddToCart }) => {
+const MainContainer = ({ cart, handleAddToCart, handleRemoveFromCart, handleCheckout }) => {
   const [products, setProducts] = useState([]);
   const [activeTab, setActiveTab] = useState('products');
 
+  
+  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+
+  
   useEffect(() => {
     fetch('/product.json')
       .then(res => res.json())
@@ -24,6 +28,7 @@ const MainContainer = ({ cart, handleAddToCart }) => {
       />
 
       {activeTab === 'products' ? (
+      
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {products.map(product => (
             <div key={product.id} className="border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all bg-white relative">
@@ -47,7 +52,6 @@ const MainContainer = ({ cart, handleAddToCart }) => {
                 ))}
               </ul>
               
-              
               <button 
                 onClick={() => handleAddToCart(product)}
                 className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white py-4 rounded-2xl font-bold transition-all"
@@ -58,22 +62,67 @@ const MainContainer = ({ cart, handleAddToCart }) => {
           ))}
         </div>
       ) : (
-        <div className="mt-12 bg-gray-50 rounded-3xl p-8 border-2 border-dashed border-gray-200">
+       
+        <div className="mt-12">
+          <h2 className="text-3xl font-bold mb-8 text-left text-[#0c1222]">
+            Your Cart
+          </h2>
+
           {cart.length > 0 ? (
-            <div>
-              <h2 className="text-2xl font-bold mb-4">Your Selected Items:</h2>
-              <ul className="space-y-2">
-                {cart.map((item, idx) => (
-                  <li key={idx} className="bg-white p-4 rounded-xl shadow-sm flex justify-between">
-                    <span>{item.name}</span>
-                    <span className="font-bold">${item.price}</span>
-                  </li>
-                ))}
-              </ul>
+          
+            <div className="space-y-6">
+              <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                <ul className="space-y-4">
+                  {cart.map((item, idx) => (
+                    <li key={idx} className="bg-gray-50 p-6 rounded-2xl flex justify-between items-center transition-all hover:bg-gray-100">
+                      <div className="flex items-center gap-4">
+                        <img src={item.icon} alt="" className="w-12 h-12" />
+                        <div>
+                          <p className="font-bold text-lg text-gray-800">{item.name}</p>
+                          <p className="text-sm text-[#7C3AED] font-semibold">${item.price}</p>
+                        </div>
+                      </div>
+                      
+                      
+                      <button 
+                        onClick={() => handleRemoveFromCart(idx)}
+                        className="p-3 text-red-500 hover:bg-red-100 rounded-full transition-all"
+                        title="Remove item"
+                      >
+                        <Trash2 size={24} />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+
+               
+                <div className="mt-8 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
+                  <div className="text-2xl font-bold text-gray-800">
+                    Total Selected Amount: <span className="text-[#7C3AED]">${totalPrice}</span>
+                  </div>
+                  
+                  <button 
+                    onClick={handleCheckout}
+                    className="w-full md:w-auto px-12 py-4 bg-[#7032ff] text-white rounded-2xl font-bold shadow-lg hover:bg-[#6129e6] transition-all"
+                  >
+                    Proceed to Checkout
+                  </button>
+                </div>
+              </div>
             </div>
           ) : (
-            <div className="text-center py-12">
-              <p className="text-gray-400 text-xl font-medium">Your cart is empty!</p>
+           
+            <div className="flex flex-col items-center justify-center py-24 bg-gray-50 rounded-[40px] border-2 border-dashed border-gray-200">
+              <div className="bg-white p-10 rounded-full shadow-lg mb-8">
+                <ShoppingCart size={100} className="text-gray-200" />
+              </div>
+              <h3 className="text-3xl font-black text-gray-800 mb-3 text-center">Your cart is empty</h3> 
+              <button 
+                onClick={() => setActiveTab('products')}
+                className="px-10 py-4 bg-[#7C3AED] text-white rounded-full font-bold hover:bg-[#6D28D9] transition-all shadow-md"
+              >
+                Start Shopping
+              </button>
             </div>
           )}
         </div>
