@@ -5,11 +5,10 @@ const Footer = () => {
     <footer className="bg-[#0B1120] text-gray-400 py-16 px-6 border-t border-gray-800 mt-0">
       <div className="max-w-7xl mx-auto">
         
-        {/* বড় স্ক্রিনে (lg) আপনার আগের মতোই ৫টি কলাম এক লাইনে থাকবে (flex-nowrap) */}
-        {/* ছোট স্ক্রিনে (default) এটি ১টি কলামে চলে আসবে (grid-cols-1) */}
+       
         <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-nowrap justify-between gap-10 mb-16 text-left">
           
-          {/* Column 1: Logo & Description - বড় স্ক্রিনে ৩০০ পিক্সেলই থাকবে */}
+         
           <div className="w-full lg:w-[300px] shrink-0">
             <h2 className="text-white text-3xl font-bold mb-6 tracking-tight">DigiTools</h2>
             <p className="text-gray-400 leading-relaxed text-sm">
@@ -51,7 +50,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 5: Social Links - বড় স্ক্রিনে auto উইডথ থাকবে */}
+          
           <div className="w-full lg:w-auto shrink-0">
             <h4 className="text-white font-semibold mb-6">Social Links</h4>
             <div className="flex gap-3">
