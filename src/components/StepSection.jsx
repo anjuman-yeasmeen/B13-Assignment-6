@@ -1,5 +1,4 @@
 import React from 'react';
-import { UserPlus, Box, Rocket } from 'lucide-react';
 
 const StepSection = () => {
   const steps = [
@@ -7,19 +6,42 @@ const StepSection = () => {
       id: "01",
       title: "Create Account",
       description: "Sign up for free in seconds. No credit card required to get started.",
-      icon: <UserPlus size={32} className="text-[#7C3AED]" />,
+      
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <line x1="19" y1="8" x2="19" y2="14"></line>
+          <line x1="22" y1="11" x2="16" y2="11"></line>
+        </svg>
+      ),
     },
     {
       id: "02",
       title: "Choose Products",
       description: "Browse our catalog and select the tools that fit your needs.",
-      icon: <Box size={32} className="text-[#7C3AED]" />,
+     
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+      ),
     },
     {
       id: "03",
       title: "Start Creating",
       description: "Download and start using your premium tools immediately.",
-      icon: <Rocket size={32} className="text-[#7C3AED]" />,
+    
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+          <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+          <path d="M9 12H4s.55-3.03 2-5c1.62-2.2 5-3 5-3"></path>
+          <path d="M12 15v5s3.03-.55 5-2c2.2-1.62 3-5 3-5"></path>
+        </svg>
+      ),
     }
   ];
 

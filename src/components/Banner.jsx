@@ -1,5 +1,5 @@
 import React from "react";
-import { Play } from 'lucide-react';
+
 import bannerImage from "../assets/banner.png";
 
 const Banner = () => {
@@ -33,18 +33,21 @@ const Banner = () => {
             Access premium AI tools, design assets, templates, and productivity software—all in one
             place. Start creating faster today. Explore Products
           </p>
-         <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
-  {/* 'Explore Tools' Button */}
-  <button className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white px-8 py-3 rounded-full font-semibold transition-all shadow-md hover:shadow-lg">
-    Explore Tools
-  </button>
-  
-  {/* 'Watch Demo' Button */}
-  <button className="border-2 border-purple-200 hover:border-purple-300 text-purple-600  px-8 py-3 rounded-full font-semibold flex items-center gap-2.5 transition-all hover:bg-purple-50">
-    <Play size={20} className="fill-current" />
-    Watch Demo
-  </button>
-</div>
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+            {/* 'Explore Tools' Button */}
+            <button className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white px-8 py-3 rounded-full font-semibold transition-all shadow-md hover:shadow-lg">
+              Explore Tools
+            </button>
+            
+            {/* 'Watch Demo' Button  */}
+            <button className="border-2 border-purple-200 hover:border-purple-300 text-purple-600  px-8 py-3 rounded-full font-semibold flex items-center gap-2.5 transition-all hover:bg-purple-50">
+          
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              Watch Demo
+            </button>
+          </div>
         </div>
       </div>
     </div>

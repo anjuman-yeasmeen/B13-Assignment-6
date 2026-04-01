@@ -1,5 +1,4 @@
 import React from 'react';
-import { Check } from 'lucide-react';
 
 const Pricing = () => {
   const plans = [
@@ -66,7 +65,17 @@ const Pricing = () => {
               <ul className="text-left space-y-3 mb-10 h-64">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm">
-                    <Check size={16} className={plan.theme === 'dark' ? 'text-white' : 'text-green-500'} />
+                   
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="18" height="18" 
+                      viewBox="0 0 24 24" fill="none" 
+                      stroke="currentColor" strokeWidth="3" 
+                      strokeLinecap="round" strokeLinejoin="round" 
+                      className={plan.theme === 'dark' ? 'text-white' : 'text-green-500'}
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
                     <span>{feature}</span>
                   </li>
                 ))}
