@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Banner from "./components/Banner"; 
 import Status from "./components/Status";
 import MainContainer from "./components/MainContainer";
+import StepSection from "./components/StepSection";
+import Pricing from "./components/Pricing";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -46,6 +48,8 @@ function App() {
         handleRemoveFromCart={handleRemoveFromCart}
         handleCheckout={handleCheckout}
       />
+      <StepSection></StepSection>
+      <Pricing></Pricing>
     </>
   );
 }
